@@ -45,6 +45,8 @@
       "text" : "согласен"
     }, {
       "text" : "начнем"
+    }, {
+      "text" : "поехали"
     } ],
     "classificationRules" : {
       "refs" : [ ]
