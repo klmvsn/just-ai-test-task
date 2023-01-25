@@ -34,32 +34,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/EndGame",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "закончить"
-    }, {
-      "text" : "все"
-    }, {
-      "text" : "хватит"
-    }, {
-      "text" : "конец игры"
-    }, {
-      "text" : "стоп"
-    }, {
-      "text" : "надоело"
-    }, {
-      "text" : "я устал"
-    }, {
-      "text" : "сдаюсь"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
     "path" : "/Agree",
     "enabled" : true,
     "shared" : false,
