@@ -63,6 +63,10 @@ theme: /
                         $reactions.answer("Есть такая буква")
                         $session.underscored = changeLetters($session.word,userAnswer,$session.underscored)
                         $reactions.answer("{{$session.underscored}}")
+                        if($session.word === $session.underscored){
+                            $reactions.answer("Поздравляю, ты угадал!")
+                            $reactions.transition("/PlayAgain")
+                        }
                     }
                     else{
                         $reactions.answer("Нет такой буквы")
