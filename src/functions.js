@@ -25,3 +25,7 @@ function changeLetters(word,letter,underscored) {
     }
     return underscored
 }
+
+function hasUnderscores(underscored){
+    return underscored.indexOf('_') === -1
+}
