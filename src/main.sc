@@ -67,22 +67,29 @@ theme: /
                     else{
                         $reactions.answer("Нет такой буквы")
                         $session.mistakes+=1
-                    }
+                        if($session.mistakes === 4){
+                            $reactions.answer("Вы можете совершить еще 2 ошибки")
+                        }
+                        if($session.mistakes === 5){
+                            $reactions.answer("Вы можете совершить еще 1 ошибку")
+                        }
+                    } 
                 }
                 else {
                     if($session.word === userAnswer){
                         $reactions.answer("Поздравляю, ты угадал!")
+                         $reactions.transition("/PlayAgain")
                     }
                     else {
                         $session.mistakes+=1
                         $reactions.answer("Я загадал другое слово")
+                        if($session.mistakes === 4){
+                            $reactions.answer("Вы можете совершить еще 2 ошибки")
+                        }
+                        if($session.mistakes === 5){
+                            $reactions.answer("Вы можете совершить еще 1 ошибку")
+                        }
                     }
-                }
-                if($session.mistakes === 4){
-                    $reactions.answer("Вы можете совершить еще 2 ошибки")
-                }
-                if($session.mistakes === 5){
-                    $reactions.answer("Вы можете совершить еще 1 ошибку")
                 }
                 if($session.mistakes === 6){
                     $reactions.answer({
