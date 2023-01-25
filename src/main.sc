@@ -85,7 +85,10 @@ theme: /
                     $reactions.answer("Вы можете совершить еще 1 ошибку")
                 }
                 if($session.mistakes === 6){
-                    $reactions.answer("Увы, ты проиграл. Я загадал слово __{{$session.word}}__")
+                    $reactions.answer({
+                        "value": "Увы, ты проиграл. Я загадал слово {{$session.word}}",
+                        "html": "Увы, ты проиграл. Я загадал слово <i>{{$session.word}}</i>"
+                    })
                     $reactions.transition("/PlayAgain")
                 }
                 
