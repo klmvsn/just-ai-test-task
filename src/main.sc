@@ -57,7 +57,7 @@ theme: /
         state: WordPattern
             q: $nonEmptyGarbage
             script:
-                var userAnswer = $parseTree.text;
+                var userAnswer = $parseTree.text.toLowerCase();
                 if(userAnswer.length === 1){
                     if(searchLetter($session.word,userAnswer)){
                         $reactions.answer("Есть такая буква")
