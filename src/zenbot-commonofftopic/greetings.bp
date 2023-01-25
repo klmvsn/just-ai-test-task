@@ -1,0 +1,23 @@
+{
+  "positions" : [ {
+    "id" : "/Offtopic/Greetings",
+    "x" : 240,
+    "y" : 3959
+  }, {
+    "id" : "/Offtopic/HowCanIHelpYou?",
+    "x" : 620,
+    "y" : 4424
+  }, {
+    "id" : "/Offtopic/CanIAskYouAQuestion",
+    "x" : 240,
+    "y" : 4424
+  }, {
+    "id" : "/Offtopic/ThankYou",
+    "x" : 240,
+    "y" : 5107
+  }, {
+    "id" : "/Offtopic/OK",
+    "x" : 240,
+    "y" : 5759
+  } ]
+}

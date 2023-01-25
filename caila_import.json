@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "novoe_testovoe_zadan-118460505-htr",
-    "name" : "novoe_testovoe_zadan-118460505-htr",
+    "id" : "bot_dlya_igry_v_vise-1000069243-XmU",
+    "name" : "bot_dlya_igry_v_vise-1000069243-XmU",
     "folder" : "/jaicp"
   },
   "settings" : {
@@ -16,21 +16,83 @@
     "shared" : false
   },
   "intents" : [ {
-    "id" : 64952,
-    "path" : "/пока",
+    "path" : "/LetsPlay",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "пока"
-    } ]
+      "text" : "играть"
+    }, {
+      "text" : "давай играть"
+    }, {
+      "text" : "давай поиграем"
+    }, {
+      "text" : "хочу играть"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   }, {
-    "id" : 64953,
-    "path" : "/привет",
+    "path" : "/EndGame",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "привет"
-    } ]
+      "text" : "закончить"
+    }, {
+      "text" : "все"
+    }, {
+      "text" : "хватит"
+    }, {
+      "text" : "конец игры"
+    }, {
+      "text" : "стоп"
+    }, {
+      "text" : "надоело"
+    }, {
+      "text" : "я устал"
+    }, {
+      "text" : "сдаюсь"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Agree",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "да"
+    }, {
+      "text" : "давай"
+    }, {
+      "text" : "согласен"
+    }, {
+      "text" : "начнем"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Disagree",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "нет"
+    }, {
+      "text" : "не хочу"
+    }, {
+      "text" : "не буду"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
@@ -137,5 +199,6 @@
   }, {
     "name" : "zb.number",
     "enabled" : false
-  } ]
+  } ],
+  "faq" : [ ]
 }

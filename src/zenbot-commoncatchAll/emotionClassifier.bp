@@ -1,0 +1,11 @@
+{
+  "positions" : [ {
+    "id" : "/CatchAll/EmotionClassifier/Positive",
+    "x" : 240,
+    "y" : 1860
+  }, {
+    "id" : "/CatchAll/EmotionClassifier/Negative",
+    "x" : 240,
+    "y" : 2213
+  } ]
+}
