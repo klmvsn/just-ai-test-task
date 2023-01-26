@@ -48,6 +48,7 @@ theme: /
             $session.word = $HangmanGameData[getRandomWordKey($session.keys)].value.word
             $session.underscored = setUnderscores($session.word)
             $session.mistakes = 0
+            $session.namedLetters = new Array()
             $reactions.answer("{{$session.word.length}} букв\n\n {{$session.underscored}}")
             $reactions.answer("Назови букву или все слово целиком")
         go: /Guessing
@@ -58,27 +59,39 @@ theme: /
             q: $nonEmptyGarbage
             script:
                 var userAnswer = $parseTree.text.toLowerCase();
-                if(userAnswer.length === 1){
-                    if(searchLetter($session.word,userAnswer)){
-                        $reactions.answer("Есть такая буква")
-                        $session.underscored = changeLetters($session.word,userAnswer,$session.underscored)
-                        $reactions.answer("{{$session.underscored}}")
-                        if(hasUnderscores($session.underscored)){
-                            $reactions.answer("Поздравляю, ты угадал!")
-                            $reactions.transition("/PlayAgain")
-                        }
+                #если пользоатель ввел букву
+                if(userAnswer.length === 1){ 
+                #проверка, вводил ли пользователь эту букву раньше
+                    if(isLetterRepeat(userAnswer,$session.namedLetters)){
+                        $reactions.answer("Ты уже называл эту букву!")
                     }
-                    else{
-                        $reactions.answer("Нет такой буквы")
-                        $session.mistakes+=1
-                        if($session.mistakes === 4){
-                            $reactions.answer("Вы можете совершить еще 2 ошибки")
+                    else {
+                #добавить новую букву в массив, где хранятся введенные буквы
+                        $session.namedLetters = addNewLetter(userAnswer,$session.namedLetters)
+                #есть ли буква в загаданном слове
+                        if(searchLetter($session.word,userAnswer)){
+                            $reactions.answer("Есть такая буква")
+                            $session.underscored = changeLetters($session.word,userAnswer,$session.underscored)
+                            $reactions.answer("{{$session.underscored}}")
+                            if(hasUnderscores($session.underscored)){
+                                $reactions.answer("Поздравляю, ты угадал!")
+                                $reactions.transition("/PlayAgain")
+                            }
                         }
-                        if($session.mistakes === 5){
-                            $reactions.answer("Вы можете совершить еще 1 ошибку")
-                        }
-                    } 
+                #если такой буквы нет
+                        else{
+                            $reactions.answer("Нет такой буквы")
+                            $session.mistakes+=1
+                            if($session.mistakes === 4){
+                                $reactions.answer("Вы можете совершить еще 2 ошибки")
+                            }
+                            if($session.mistakes === 5){
+                                $reactions.answer("Вы можете совершить еще 1 ошибку")
+                            }
+                        } 
+                    }
                 }
+            #если пользователь отгадывает слово целиком
                 else {
                     if($session.word === userAnswer){
                         $reactions.answer("Поздравляю, ты угадал!")
