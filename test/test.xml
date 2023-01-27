@@ -1,9 +1,24 @@
 <test>
-    <test-case id="1">
-        <state>Start</state>
-        <a>Привет! Предлагаю сыграть в игру "Виселица". Я загадаю слово, а ты будешь отгадывать. Ты можешь угадывать по буквам или попробовать назвать слово целиком. Можно допустить 6 ошибок. Игру можно закончить в любой момент. Начнем?</a>
-        <a state="/Start/Ready"></a>
-        <q>да</q>
-        <a state="/Start/Ready/Agree"></a>
+    <test-case id="refuse-to-play">
+        <q>/start</q>
+        <a state="/Start"></a>
+        <q>нет</q>
+        <a state="/Start/Ready/Disagree"></a>
     </test-case>
+    
+    <test-case id="no-match">
+        <q>/start</q>
+        <a state="/Start"></a>
+        <q>как дела</q>
+        <a state="/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="give-up-and-play-again">
+        <state>/Guessing/WordPattern</state>
+        <q>сдаюсь</q>
+        <a>Жаль! Если передумаешь - скажи "давай поиграем"</a>
+        <q>играть</q>
+        <a>Привет! Предлагаю сыграть в игру "Виселица". Я загадаю слово, а ты будешь отгадывать. Ты можешь угадывать по буквам или попробовать назвать слово целиком. Можно допустить 6 ошибок. Игру можно закончить в любой момент. Начнем?</a>
+    </test-case>
+
 </test>

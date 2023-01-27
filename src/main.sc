@@ -21,7 +21,7 @@ patterns:
         var id = $parseTree.HangmanGameData[0].value;
         return $HangmanGameData[id].value;
         }
-    $endGame = (все|хватит|не хочу|конец|закончить|стоп|останови*)
+    $endGame = (все|хватит|не хочу|конец|закончить|стоп|останови*|сдаюсь)
 theme: /
 
     state: Start
@@ -118,7 +118,7 @@ theme: /
                 
 
     state: PlayAgain
-        a:  Сыграем еще?
+        a: Сыграем еще?
         
         state: Yes
             intent: /Agree
